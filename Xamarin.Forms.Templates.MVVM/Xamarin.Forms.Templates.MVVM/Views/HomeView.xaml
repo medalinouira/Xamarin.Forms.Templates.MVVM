@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin.Forms.Templates.MVVM.Views.HomeView"
+             Title="{ex:Translate Key=HOME_TITLE}"                          
+             xmlns:ex="clr-namespace:Xamarin.Forms.ToolKit.Extensions;assembly=Xamarin.Forms.ToolKit.Extensions"
+             BindingContext="{Binding Home, Source={StaticResource Locator}}">
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Image Source="{ex:ImageResource Key=ic_sample.png}"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="{Binding Path=WelcomeText}"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Details"                   
+                    Command="{Binding Path=NavigateToCommand}"
+                    CommandParameter="DetailsView"/>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

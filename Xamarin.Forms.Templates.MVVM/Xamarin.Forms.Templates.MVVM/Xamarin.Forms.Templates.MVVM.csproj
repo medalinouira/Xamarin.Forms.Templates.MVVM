@@ -1,0 +1,84 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <title>Xamarin.Forms.Templates.MVVM</title>
+    <PackageId>Xamarin.Forms.Templates.MVVM</PackageId>
+    <PackageVersion>1.0.2</PackageVersion>
+    <Version>1.0.2</Version>
+    <Authors>Mohamed Ali NOUIRA</Authors>
+    <Owners>Mohamed Ali NOUIRA</Owners>
+    <Summary>MVVM template for Xamarin.Forms projects.</Summary>
+    <EnableDefaultCompileItems>False</EnableDefaultCompileItems>
+    <EnableDefaultEmbeddedResourceItems>False</EnableDefaultEmbeddedResourceItems>
+    <Company>Mohamed Ali NOUIRA</Company>
+    <Copyright>Copyright (c) Mohamed Ali NOUIRA. All rights reserved.</Copyright>
+    <PackageLicenseUrl>https://www.github.com/medalinouira/Xamarin.Forms.Templates.MVVM</PackageLicenseUrl>
+    <PackageProjectUrl>https://www.github.com/medalinouira/Xamarin.Forms.Templates.MVVM</PackageProjectUrl>
+    <Description>MVVM template for Xamarin.Forms projects.</Description>
+    <RepositoryUrl>https://www.github.com/medalinouira/Xamarin.Forms.Templates.MVVM</RepositoryUrl>
+    <PackageTags>Xamarin Xamarin.Forms Templates MVVM Sweet-MIT</PackageTags>
+    <PackageIconUrl>https://github.com/medalinouira/Xamarin.Forms.Templates.MVVM/blob/master/Xamarin.Forms.Templates.MVVM/Xamarin.Forms.Templates.MVVM/AppResources/Assets/ic_sample.png?raw=true</PackageIconUrl>
+    <PackageReleaseNotes>MVVM template for Xamarin.Forms projects.</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ApplicationIcon />
+    <Win32Resource />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml" />
+    <EmbeddedResource Include="Views\HomeView.xaml" />
+    <EmbeddedResource Include="Views\DetailsView.xaml" />
+    <EmbeddedResource Include="AppResources\Assets\ic_sample.png" />
+    <EmbeddedResource Include="AppResources\Localization\Resources.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.Forms.Navigation" Version="1.0.1" />
+    <PackageReference Include="Xamarin.Forms.ToolKit.Behaviors" Version="1.0.2" />
+    <PackageReference Include="Xamarin.Forms.ToolKit.Controls" Version="1.0.2" />
+    <PackageReference Include="Xamarin.Forms.ToolKit.Converters" Version="1.0.0" />
+    <PackageReference Include="Xamarin.Forms.ToolKit.Extensions" Version="1.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+
+    <Compile Include="Models\SampleModel.cs" />
+    
+    <Compile Include="IViewModels\IHomeViewModel.cs" />
+    <Compile Include="IViewModels\IDetailsViewModel.cs" />
+    
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />    
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\DetailsViewModel.cs" />   
+    
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>    
+    
+    <Compile Include="Views\HomeView.xaml.cs">
+      <DependentUpon>Views\HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DetailsView.xaml.cs">
+      <DependentUpon>Views\DetailsView.xaml</DependentUpon>
+    </Compile>
+    
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  
+</Project>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin.Forms.Templates.MVVM.App"             
+             xmlns:vm="clr-namespace:Xamarin.Forms.Templates.MVVM.ViewModels"
+             xmlns:c="clr-namespace:Xamarin.Forms.ToolKit.Converters;assembly=Xamarin.Forms.ToolKit.Converters">
+
+    <Application.Resources>
+
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+
+            <!-- ViewModelLocator -->
+            <vm:ViewModelLocator x:Key="Locator" />
+
+            <!-- Converters -->
+            <c:SelectedItemConverter x:Key="SelectedItemConverter"/>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+</Application>
